@@ -1,0 +1,16 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+td {
+    padding-block: 5px;
+}
+
+.modal::-webkit-scrollbar {
+    width: 0px;
+  }
+  .modal-card {
+    position: absolute;
+    right: 50%;
+    transform: translateX(50%);
+  }
