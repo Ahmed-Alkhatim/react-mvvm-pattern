@@ -18,7 +18,10 @@ const UsersProvider = ({ children }) => {
     const [ users, setUsers ] = useState([])
     const [viewUsers, updateView] = useState([])
 
-    const updateUsers = (data) => { setUsers(data); updateView(data); console.log('update hook', data); }
+    const updateUsers = (data) => { 
+        setUsers(data); 
+        updateView(data); 
+    }
 
     const searchForUser = (str) => {
         if(str) updateView( users.filter( (user) => user.username.includes(str) ) )
@@ -26,7 +29,6 @@ const UsersProvider = ({ children }) => {
     }
     
     const deleteUser = (id) => {
-        console.log('delete hook', id);
         setUsers(users.filter( (user) => user.id != id ) )
         updateView(viewUsers.filter( (user) => user.id != id ) )
     }

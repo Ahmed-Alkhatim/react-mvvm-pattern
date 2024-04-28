@@ -16,7 +16,7 @@ import { UsersContext } from "../../data/users"
 const Users = () => {
     // View-model
     const { viewUsers, updateUsers, deleteUser } = useContext(UsersContext) 
-    const { data , getUsers } = useGetUsers()
+    const { getUsers } = useGetUsers()
      
     useEffect(() => {
         getUsers()    
@@ -25,7 +25,7 @@ const Users = () => {
     const deleteTheUser = (id) => {
         UsersApi.deleteUser(id)
     }
-    useEffect(() =>{})
+    
     UsersApi.on('usersFetched', (e) => {updateUsers(e.detail)})
     UsersApi.on('userDeleted', (e) => {deleteUser(e.detail.id)})
 
