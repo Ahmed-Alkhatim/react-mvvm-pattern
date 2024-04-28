@@ -25,8 +25,8 @@ const Users = () => {
     const deleteTheUser = (id) => {
         UsersApi.deleteUser(id)
     }
-
-    UsersApi.on('usersFetched', () => {updateUsers(data)})
+    useEffect(() =>{})
+    UsersApi.on('usersFetched', (e) => {updateUsers(e.detail)})
     UsersApi.on('userDeleted', (e) => {deleteUser(e.detail.id)})
 
     // View
