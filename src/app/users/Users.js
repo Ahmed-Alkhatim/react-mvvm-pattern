@@ -26,8 +26,8 @@ const Users = () => {
         UsersApi.deleteUser(id)
     }
 
-    UsersApi.on('usersFetched', () => updateUsers(data))
-    UsersApi.on('userDeleted', (e) => deleteUser(e.detail.id))
+    UsersApi.on('usersFetched', () =>{ updateUsers(data); console.log('updated event');})
+    UsersApi.on('userDeleted', (e) =>{ deleteUser(e.detail.id); console.log('deleted event')})
 
     // View
     return(
