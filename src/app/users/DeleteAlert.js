@@ -3,8 +3,10 @@ import UsersApi from "@/api/users"
 import { useState } from "react"
 
 export default  () => {
+    
     const [userDeleted, setUser] = useState()
     const [isVisible, setIsVisible] = useState(false)
+
     UsersApi.on('userDeleted', (e) => { 
         setUser(e.detail)
         setIsVisible(true) 
